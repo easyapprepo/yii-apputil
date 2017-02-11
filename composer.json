@@ -1,0 +1,19 @@
+{
+    "name": "easyapprepo/yii-apputil",
+    "type": "library",
+    "description": "Some useful and necessary utilities for Yii applications",
+    "keywords": ["yii","persian", "date", "string", "farsi"],
+    "homepage": "https://github.com/easyapprepo/yii-apputil",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patriot (M. Ali Taebi)",
+            "email": "taebi@me.com",
+            "homepage": "http://riot.ir",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
