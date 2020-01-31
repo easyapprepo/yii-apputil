@@ -223,7 +223,10 @@ class pDate{
 	
 	                case 'j':
 	                    $dayinM = $this->DayOfYear($pMonth, $pDay);
-	                    $result .= (($dayinM < 10) ? '00' . $dayinM : ($dayinM < 100) ? '0' . $dayinM : $dayinM);
+	                    $result .= (
+	                        (
+	                            ($dayinM < 10) ? ('00' . $dayinM) : (($dayinM < 100) ? ('0' . $dayinM) : ($dayinM))
+                            ));
 	                    break;
 	
 	                case 'u':
@@ -291,9 +294,9 @@ class pDate{
 	                case 'P':
 	                case 'r':
 	                    if (date('a', $timestamp) == 'am') {
-	                        $result .= (($type == 'p') ? 'ق.ظ' : ($type == 'P') ? 'قبل از ظهر' : $this->strftime("%I:%M:%S قبل از ظهر", $timestamp));
+	                        $result .= (($type == 'p') ? 'ق.ظ' : (($type == 'P') ? 'قبل از ظهر' : $this->strftime("%I:%M:%S قبل از ظهر", $timestamp)));
 	                    } else {
-	                        $result .= (($type == 'p') ? 'ب.ظ' : ($type == 'P') ? 'بعد از ظهر' : $this->strftime("%I:%M:%S بعد از ظهر", $timestamp));
+	                        $result .= (($type == 'p') ? 'ب.ظ' : (($type == 'P') ? 'بعد از ظهر' : $this->strftime("%I:%M:%S بعد از ظهر", $timestamp)));
 	                    }
 	                    break;
 	
@@ -304,11 +307,11 @@ class pDate{
 	
 	                case 'D':
 	                case 'x':
-	                    $result .= ((($pMonth < 10) ? '0' . $pMonth : $pMonth) . '-' . (($pDay < 10) ? '0' . $pDay : $pDay) . '-' . substr($pYear, 2));
+	                    $result .= ((($pMonth < 10) ? ('0' . $pMonth): $pMonth) . '-' . (($pDay < 10) ? ('0' . $pDay) : $pDay) . '-' . substr($pYear, 2));
 	                    break;
 	
 	                case 'F':
-	                    $result .= ($pYear . '-' . (($pMonth < 10) ? '0' . $pMonth : $pMonth) . '-' . (($pDay < 10) ? '0' . $pDay : $pDay));
+	                    $result .= ($pYear . '-' . (($pMonth < 10) ? ('0' . $pMonth) : $pMonth) . '-' . (($pDay < 10) ? ('0' . $pDay) : $pDay));
 	                    break;
 	
 	                case 's':
